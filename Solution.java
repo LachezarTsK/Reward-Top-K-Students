@@ -42,12 +42,12 @@ public class Solution {
     }
 
     private List<Integer> rankedStudentsAsSortedList(PriorityQueue<Student> minHeapStudents) {
-        List<Integer> topStudentsRank = new ArrayList<>();
+        List<Integer> topStudentsID = new ArrayList<>();
         while (!minHeapStudents.isEmpty()) {
-            topStudentsRank.add(minHeapStudents.poll().ID);
+            topStudentsID.add(minHeapStudents.poll().ID);
         }
-        Collections.reverse(topStudentsRank);
-        return topStudentsRank;
+        Collections.reverse(topStudentsID);
+        return topStudentsID;
     }
 
     private int calculateScore(String report) {
