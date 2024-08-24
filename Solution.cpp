@@ -37,7 +37,7 @@ public:
         int index = 0;
         while (index < studentID.size() && minHeapStudents.size() < numberOfTopStudentsToRank) {
             int score = calculateScore(report[index]);
-            minHeapStudents.emplace(Student(studentID[index], score));
+            minHeapStudents.emplace(studentID[index], score);
             ++index;
         }
 
@@ -45,7 +45,7 @@ public:
             int score = calculateScore(report[index]);
             if (currentStudentRanksHigher(minHeapStudents, studentID[index], score)) {
                 minHeapStudents.pop();
-                minHeapStudents.emplace(Student(studentID[index], score));
+                minHeapStudents.emplace(studentID[index], score);
             }
             ++index;
         }
